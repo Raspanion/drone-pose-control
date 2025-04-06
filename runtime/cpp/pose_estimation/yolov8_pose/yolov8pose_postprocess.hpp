@@ -6,8 +6,8 @@
 #include "common/hailo_objects.hpp"
 #include "common/hailo_common.hpp"
 
-#include <xtensor/xview.hpp>
-#include <xtensor/xsort.hpp>
+#include <xtensor/views/xview.hpp>
+#include <xtensor/misc/xsort.hpp>
 
 struct KeyPt {
     float xs;

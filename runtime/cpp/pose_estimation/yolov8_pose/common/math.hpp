@@ -4,11 +4,11 @@
 **/
 #pragma once
 
-#include "xtensor/xarray.hpp"
-#include "xtensor/xeval.hpp"
-#include "xtensor/xsort.hpp"
-#include "xtensor/xview.hpp"
-#include "xtensor/xio.hpp"
+#include "xtensor/containers/xarray.hpp"
+#include "xtensor/core/xeval.hpp"
+#include "xtensor/misc/xsort.hpp"
+#include "xtensor/views/xview.hpp"
+#include "xtensor/io/xio.hpp"
 
 
 namespace common

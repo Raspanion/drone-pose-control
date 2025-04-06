@@ -58,7 +58,7 @@ hailo_status post_processing_all(std::vector<std::shared_ptr<FeatureData<T>>> &f
 
     std::sort(features.begin(), features.end(), &FeatureData<T>::sort_tensors_by_size);
 
-    // cv::VideoWriter video("./processed_video.mp4", cv::VideoWriter::fourcc('m','p','4','v'),30, cv::Size((int)org_width, (int)org_height));
+    cv::VideoWriter video("./processed_video.mp4", cv::VideoWriter::fourcc('m','p','4','v'),30, cv::Size((int)org_width, (int)org_height));
 
     m.lock();
     std::cout << YELLOW << "\n-I- Starting postprocessing\n" << std::endl << RESET;
@@ -106,10 +106,10 @@ hailo_status post_processing_all(std::vector<std::shared_ptr<FeatureData<T>>> &f
             cv::line(frames[0], pt1, pt2, cv::Scalar(255, 0, 255), 3);
         }
 
-        // cv::imshow("Display window", frames[0]);
-        // cv::waitKey(0);
+        cv::imshow("Display window", frames[0]);
+        cv::waitKey(30);
 
-        // video.write(frames[0]);
+        video.write(frames[0]);
         cv::imwrite("output_image.jpg", frames[0]);
         
         frames[0].release();
@@ -119,7 +119,7 @@ hailo_status post_processing_all(std::vector<std::shared_ptr<FeatureData<T>>> &f
         m.unlock();
     }
     postprocess_time = std::chrono::high_resolution_clock::now();
-    // video.release();
+    video.release();
 
     return status;
 }

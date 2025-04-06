@@ -5,8 +5,8 @@
 #pragma once
 
 #include "hailo_objects.hpp"
-#include "xtensor/xadapt.hpp"
-#include "xtensor/xarray.hpp"
+#include "xtensor/containers/xadapt.hpp"
+#include "xtensor/containers/xarray.hpp"
 
 namespace common
 {
